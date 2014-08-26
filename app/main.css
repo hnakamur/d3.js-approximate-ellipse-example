@@ -1,0 +1,14 @@
+svg {
+  border: 1px solid black;
+}
+
+ellipse {
+  stroke: blue;
+  fill: none;
+}
+
+path {
+  stroke: red;
+  fill: none;
+  opacity: 0.5;
+}
