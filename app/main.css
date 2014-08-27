@@ -3,8 +3,9 @@ svg {
 }
 
 ellipse {
-  stroke: blue;
+  stroke: green;
   fill: none;
+  opacity: 0.5;
 }
 
 path {

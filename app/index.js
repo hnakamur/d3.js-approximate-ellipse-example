@@ -5,8 +5,8 @@ var EllipticArc = require('../lib/elliptic-arc');
 
 var svg = d3.select('#example').append('svg')
   .attr({
-    width: 400,
-    height: 400
+    width: 1000,
+    height: 800
   });
 
 var handleRadius = 8;
@@ -14,9 +14,9 @@ var tangentPointRadius = 4;
 var intersectionRadius = 4;
 
 var ellipse = {
-  cx: 200,
+  cx: 300,
   cy: 200,
-  rx: 150,
+  rx: 200,
   ry: 100
 };
 
@@ -33,13 +33,10 @@ ellipseLayer.selectAll('ellipse').data([ellipse])
   });
 
 var theta = 0;
-//var lambda1 = Math.PI / 4;
-//var lambda2 = lambda1 + Math.PI / 4;
-var lambda1 = Math.PI / 32;
-var lambda2 = lambda1 + Math.PI / 32;
+var lambda1 = 0;
+var lambda2 = 2 * Math.PI;
 var ellipticArc = new EllipticArc(ellipse.cx, ellipse.cy, ellipse.rx, ellipse.ry, theta, lambda1, lambda2);
 var curves = ellipticArc.getApproximateCubicBezierCurves();
-console.log('curves', curves);
 
 function pathData(curve) {
   var xs = curve.xs;
